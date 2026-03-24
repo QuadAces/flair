@@ -62,7 +62,7 @@ type CatalogNodeIndex = {
   children?: string[];
 } & ResourceLinks;
 
-const SUBJECTS_ROOT = path.join(process.cwd(), 'src/data/subjects');
+const SUBJECTS_ROOT = path.join(process.cwd(), 'data');
 
 async function readJsonFile<T>(filePath: string): Promise<T> {
   const fileText = await fs.readFile(filePath, 'utf8');
