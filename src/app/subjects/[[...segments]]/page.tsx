@@ -96,7 +96,7 @@ export default async function SubjectsPage({ params }: SubjectsPageProps) {
             <SearchBar />
           </div>
 
-          <article className='mt-6 max-w-3xl'>
+          <article className='mt-6'>
             <h1 className='text-3xl font-bold'>{node.name}</h1>
             <p className='mt-2 text-lg'>{node.title}</p>
             <p className='mt-3 text-gray-600'>{node.description}</p>
