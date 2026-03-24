@@ -3,8 +3,5 @@
   "name": "Web Development",
   "title": "Web Development",
   "description": "Build modern web interfaces and end-to-end applications.",
-  "deps": ["fundamental-programming"],
-  "read": ["https://developer.mozilla.org/en-US/docs/Learn"],
-  "watch": ["https://www.youtube.com/watch?v=GxmfcnU3feo"],
-  "exercices": ["https://www.frontendmentor.io/challenges"]
+  "deps": ["fundamental-programming"]
 }

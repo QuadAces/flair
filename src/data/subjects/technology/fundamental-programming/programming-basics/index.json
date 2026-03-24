@@ -1,9 +1,0 @@
-{
-  "id": "programming-basics",
-  "title": "Programming Basics",
-  "description": "Variables, data types, and simple logic.",
-  "deps": [],
-  "read": ["https://www.w3schools.com/programming/programming_intro.asp"],
-  "watch": ["https://www.youtube.com/watch?v=8mAITcNt710"],
-  "exercices": ["https://exercism.org/tracks/javascript"]
-}

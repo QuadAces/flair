@@ -3,8 +3,5 @@
   "name": "Drones",
   "title": "Drone Systems",
   "description": "Understand drone flight, regulations, and autonomous behavior.",
-  "deps": ["fundamental-programming"],
-  "read": ["https://www.faa.gov/uas"],
-  "watch": ["https://www.youtube.com/watch?v=JxM8Q7P4A0M"],
-  "exercices": ["https://px4.io/sitl"]
+  "deps": ["fundamental-programming"]
 }

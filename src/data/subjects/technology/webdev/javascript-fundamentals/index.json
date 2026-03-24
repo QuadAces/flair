@@ -1,9 +1,0 @@
-{
-  "id": "javascript-fundamentals",
-  "title": "JavaScript Fundamentals",
-  "description": "Interactive behavior and browser-side logic.",
-  "deps": ["html-css"],
-  "read": ["https://javascript.info/"],
-  "watch": ["https://www.youtube.com/watch?v=W6NZfCO5SIk"],
-  "exercices": ["https://www.codewars.com/"]
-}

@@ -1,9 +1,0 @@
-{
-  "id": "motion-planning",
-  "title": "Motion Planning",
-  "description": "Path finding and trajectory optimization for robots.",
-  "deps": ["sensors-and-actuators"],
-  "read": ["https://moveit.ros.org/documentation/concepts/"],
-  "watch": ["https://www.youtube.com/watch?v=VAVf7y5XvF8"],
-  "exercices": ["https://ompl.kavrakilab.org/"]
-}

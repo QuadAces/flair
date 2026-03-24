@@ -3,10 +3,5 @@
   "name": "Fundamental Programming",
   "title": "Fundamental Programming",
   "description": "Learn core programming concepts used across all technology fields.",
-  "deps": [],
-  "read": ["https://www.freecodecamp.org/news/the-programming-handbook/"],
-  "watch": ["https://www.youtube.com/watch?v=zOjov-2OZ0E"],
-  "exercices": [
-    "https://www.hackerrank.com/domains/tutorials/10-days-of-javascript"
-  ]
+  "deps": []
 }

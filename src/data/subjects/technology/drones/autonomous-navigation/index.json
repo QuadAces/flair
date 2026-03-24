@@ -1,9 +1,0 @@
-{
-  "id": "autonomous-navigation",
-  "title": "Autonomous Navigation",
-  "description": "Waypoint planning, obstacle avoidance, and autonomy stacks.",
-  "deps": ["drone-safety"],
-  "read": ["https://mavlink.io/en/"],
-  "watch": ["https://www.youtube.com/watch?v=Y8J8fC2NQ9k"],
-  "exercices": ["https://ardupilot.org/dev/"]
-}
