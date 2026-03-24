@@ -16,6 +16,35 @@ export type SearchEntry = {
   description?: string;
 };
 
+export type CatalogTrailItem = {
+  id: string;
+  label: string;
+  pathSegments: string[];
+  path: string;
+};
+
+export type CatalogChild = {
+  id: string;
+  label: string;
+  title: string;
+  deps: string[];
+  pathSegments: string[];
+  path: string;
+};
+
+export type CatalogNode = {
+  id: string;
+  name: string;
+  title: string;
+  description: string;
+  deps: string[];
+  kind: SearchEntry['kind'];
+  pathSegments: string[];
+  path: string;
+  trail: CatalogTrailItem[];
+  children: CatalogChild[];
+} & ResourceLinks;
+
 export type SubjectSummary = {
   id: string;
   name: string;
@@ -63,6 +92,7 @@ type CatalogNodeIndex = {
 } & ResourceLinks;
 
 const SUBJECTS_ROOT = path.join(process.cwd(), 'data');
+const LEGACY_ROUTE_MARKERS = new Set(['courses', 'modules']);
 
 async function readJsonFile<T>(filePath: string): Promise<T> {
   const fileText = await fs.readFile(filePath, 'utf8');
@@ -342,18 +372,105 @@ function getSearchKind(depth: number): SearchEntry['kind'] {
   return 'module';
 }
 
+export function getSubjectsPath(pathSegments: string[]): string {
+  if (pathSegments.length === 0) {
+    return '/subjects';
+  }
+
+  return `/subjects/${pathSegments.join('/')}`;
+}
+
+export function normalizeCatalogRouteSegments(segments: string[]): string[] {
+  if (segments.length === 0) {
+    return [];
+  }
+
+  const normalized = [segments[0]];
+
+  for (let index = 1; index < segments.length; index += 1) {
+    const segment = segments[index];
+
+    if (LEGACY_ROUTE_MARKERS.has(segment)) {
+      continue;
+    }
+
+    normalized.push(segment);
+  }
+
+  return normalized;
+}
+
+async function getNodeTrail(
+  pathSegments: string[]
+): Promise<Array<{ node: CatalogNodeIndex; pathSegments: string[] }> | null> {
+  const trail: Array<{ node: CatalogNodeIndex; pathSegments: string[] }> = [];
+
+  for (let depth = 1; depth <= pathSegments.length; depth += 1) {
+    const currentSegments = pathSegments.slice(0, depth);
+    const node = await readNodeIndex(currentSegments);
+
+    if (!node) {
+      return null;
+    }
+
+    trail.push({ node, pathSegments: currentSegments });
+  }
+
+  return trail;
+}
+
+export async function resolveCatalogNode(
+  pathSegments: string[]
+): Promise<CatalogNode | null> {
+  if (pathSegments.length === 0) {
+    return null;
+  }
+
+  const trail = await getNodeTrail(pathSegments);
+
+  if (!trail || trail.length === 0) {
+    return null;
+  }
+
+  const currentNode = trail[trail.length - 1].node;
+  const children = await getChildNodes(pathSegments);
+
+  return {
+    id: currentNode.id,
+    name: getDisplayName(currentNode),
+    title: getDisplayTitle(currentNode),
+    description: getDescription(currentNode),
+    deps: getDeps(currentNode),
+    read: currentNode.read,
+    watch: currentNode.watch,
+    exercices: currentNode.exercices,
+    people: currentNode.people,
+    kind: getSearchKind(pathSegments.length),
+    pathSegments,
+    path: getSubjectsPath(pathSegments),
+    trail: trail.map((item) => ({
+      id: item.node.id,
+      label: getDisplayName(item.node),
+      pathSegments: item.pathSegments,
+      path: getSubjectsPath(item.pathSegments),
+    })),
+    children: children.map((child) => {
+      const childSegments = [...pathSegments, child.id];
+
+      return {
+        id: child.id,
+        label: getDisplayName(child),
+        title: getDisplayTitle(child),
+        deps: getDeps(child),
+        pathSegments: childSegments,
+        path: getSubjectsPath(childSegments),
+      };
+    }),
+  };
+}
+
 function getSearchPath(pathSegments: string[]): string {
-  if (pathSegments.length === 1) {
-    return `/subjects/${pathSegments[0]}`;
-  }
-
-  if (pathSegments.length === 2) {
-    return `/subjects/${pathSegments[0]}/courses/${pathSegments[1]}`;
-  }
-
-  return `/subjects/${pathSegments[0]}/courses/${pathSegments[1]}/modules/${
-    pathSegments[pathSegments.length - 1]
-  }`;
+  return getSubjectsPath(pathSegments);
 }
 
 async function collectSearchEntries(

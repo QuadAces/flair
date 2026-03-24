@@ -31,9 +31,7 @@ export default async function HomePage() {
             <SearchBar />
           </div>
           {subjects.length === 0 ? <p>No subjects found.</p> : null}
-          {subjects.length > 0 ? (
-            <GraphNavigator items={graphItems} mode='subject' />
-          ) : null}
+          {subjects.length > 0 ? <GraphNavigator items={graphItems} /> : null}
         </div>
       </section>
     </main>

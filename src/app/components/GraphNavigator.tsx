@@ -16,37 +16,17 @@ type GraphItem = {
 
 type GraphNavigatorProps = {
   items: GraphItem[];
-  mode: 'subject' | 'course' | 'module';
-  subjectId?: string;
-  courseId?: string;
+  baseSegments?: string[];
 };
 
 export default function GraphNavigator({
   items,
-  mode,
-  subjectId,
-  courseId,
+  baseSegments = [],
 }: GraphNavigatorProps) {
   const router = useRouter();
 
-  function getPath(nodeId: string): string | null {
-    if (mode === 'subject') {
-      return `/subjects/${nodeId}`;
-    }
-
-    if (mode === 'course') {
-      if (!subjectId) {
-        return null;
-      }
-
-      return `/subjects/${subjectId}/courses/${nodeId}`;
-    }
-
-    if (!subjectId || !courseId) {
-      return null;
-    }
-
-    return `/subjects/${subjectId}/courses/${courseId}/modules/${nodeId}`;
+  function getPath(nodeId: string): string {
+    return `/subjects/${[...baseSegments, nodeId].join('/')}`;
   }
 
   return (
@@ -54,11 +34,6 @@ export default function GraphNavigator({
       items={items}
       onNodeClick={(nodeId) => {
         const path = getPath(nodeId);
-
-        if (!path) {
-          return;
-        }
-
         router.push(path);
       }}
     />
