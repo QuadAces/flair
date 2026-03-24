@@ -1,0 +1,9 @@
+{
+  "id": "fullstack-project",
+  "title": "Full-stack Project",
+  "description": "Integrate frontend, backend, and deployment flow.",
+  "deps": ["javascript-fundamentals"],
+  "read": ["https://roadmap.sh/full-stack"],
+  "watch": ["https://www.youtube.com/watch?v=nu_pCVPKzTk"],
+  "exercices": ["https://github.com/florinpop17/app-ideas"]
+}

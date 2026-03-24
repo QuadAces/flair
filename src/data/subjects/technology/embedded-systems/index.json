@@ -1,0 +1,12 @@
+{
+  "id": "embedded-systems",
+  "name": "Embedded Systems",
+  "title": "Embedded Systems Engineering",
+  "description": "Build reliable software tightly integrated with hardware constraints.",
+  "deps": ["fundamental-programming"],
+  "read": [
+    "https://www.geeksforgeeks.org/introduction-of-embedded-systems-set-1/"
+  ],
+  "watch": ["https://www.youtube.com/watch?v=6uM5WQGZ2K8"],
+  "exercices": ["https://wokwi.com/projects/new/arduino-uno"]
+}

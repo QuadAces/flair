@@ -1,0 +1,9 @@
+{
+  "id": "data-structures",
+  "title": "Data Structures",
+  "description": "Arrays, maps, and basic abstract data types.",
+  "deps": ["control-flow"],
+  "read": ["https://www.geeksforgeeks.org/data-structures/"],
+  "watch": ["https://www.youtube.com/watch?v=RBSGKlAvoiM"],
+  "exercices": ["https://neetcode.io/practice"]
+}

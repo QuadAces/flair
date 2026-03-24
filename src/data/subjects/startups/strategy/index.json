@@ -1,0 +1,13 @@
+{
+  "id": "strategy",
+  "name": "Startup Strategy",
+  "title": "Startup Strategy",
+  "description": "Learn how to build a successful startup from the ground up.",
+  "deps": ["value"],
+  "read": [
+    "https://www.amazon.com.au/Zero-One-Blake-Masters/dp/0753555204",
+    "https://www.amazon.com.au/Good-Great-Some-Companies-Others/dp/0066620996"
+  ],
+  "watch": ["https://www.youtube.com/@ycombinator/videos"],
+  "people": ["https://www.paulgraham.com/"]
+}

@@ -1,7 +1,6 @@
 import { LucideIcon } from 'lucide-react';
 import * as React from 'react';
 import { IconType } from 'react-icons';
-import { ImSpinner2 } from 'react-icons/im';
 
 import { cn } from '@/lib/utils';
 
@@ -9,7 +8,6 @@ const ButtonVariant = ['primary', 'outline', 'ghost', 'light', 'dark'] as const;
 const ButtonSize = ['sm', 'base'] as const;
 
 type ButtonProps = {
-  isLoading?: boolean;
   isDarkBg?: boolean;
   variant?: (typeof ButtonVariant)[number];
   size?: (typeof ButtonSize)[number];
@@ -27,7 +25,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       className,
       disabled: buttonDisabled,
-      isLoading,
       variant = 'primary',
       size = 'base',
       isDarkBg = false,
@@ -38,7 +35,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const disabled = isLoading || buttonDisabled;
+    const disabled = buttonDisabled;
 
     return (
       <button
@@ -93,26 +90,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           ],
           //#endregion  //*======== Variants ===========
           'disabled:cursor-not-allowed',
-          isLoading &&
-            'relative text-transparent transition-none hover:text-transparent disabled:cursor-wait',
           className
         )}
         {...rest}
       >
-        {isLoading && (
-          <div
-            className={cn(
-              'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
-              {
-                'text-white': ['primary', 'dark'].includes(variant),
-                'text-black': ['light'].includes(variant),
-                'text-primary-500': ['outline', 'ghost'].includes(variant),
-              }
-            )}
-          >
-            <ImSpinner2 className='animate-spin' />
-          </div>
-        )}
         {LeftIcon && (
           <div
             className={cn([

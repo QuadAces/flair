@@ -1,0 +1,9 @@
+{
+  "id": "html-css",
+  "title": "HTML and CSS",
+  "description": "Structure and style webpages effectively.",
+  "deps": [],
+  "read": ["https://developer.mozilla.org/en-US/docs/Learn/HTML"],
+  "watch": ["https://www.youtube.com/watch?v=mU6anWqZJcc"],
+  "exercices": ["https://cssbattle.dev/"]
+}

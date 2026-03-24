@@ -1,0 +1,17 @@
+{
+  "id": "technology",
+  "name": "Technology",
+  "title": "Technology Learning Hub",
+  "description": "A focused pathway covering programming, web development, drones, robotics, and embedded systems.",
+  "children": [
+    "fundamental-programming",
+    "webdev",
+    "drones",
+    "robotics",
+    "embedded-systems"
+  ],
+  "deps": [],
+  "read": ["https://www.redhat.com/en/topics/automation/what-is-technology"],
+  "watch": ["https://www.youtube.com/watch?v=2ePf9rue1Ao"],
+  "exercices": ["https://roadmap.sh/"]
+}

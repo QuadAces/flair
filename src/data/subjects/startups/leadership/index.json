@@ -1,0 +1,12 @@
+{
+  "id": "leadership",
+  "name": "Leadership",
+  "title": "Leadership Development",
+  "description": "Cultivate leadership skills for building and leading successful startups.",
+  "deps": ["value"],
+  "read": [
+    "https://www.amazon.com.au/Start-With-Why-Leaders-Inspire/dp/1591846447"
+  ],
+  "watch": ["https://www.youtube.com/watch?v=qp0HIF3SfI4"],
+  "people": ["https://simonsinek.com/"]
+}

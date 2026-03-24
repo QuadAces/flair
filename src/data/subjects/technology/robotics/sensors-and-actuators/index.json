@@ -1,0 +1,9 @@
+{
+  "id": "sensors-and-actuators",
+  "title": "Sensors and Actuators",
+  "description": "Perception inputs and control outputs for robotic systems.",
+  "deps": ["robotics-foundations"],
+  "read": ["https://automaticaddison.com/category/robotics/"],
+  "watch": ["https://www.youtube.com/watch?v=8A4dA7x0a4s"],
+  "exercices": ["https://wiki.ros.org/"]
+}

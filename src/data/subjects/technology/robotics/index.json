@@ -1,0 +1,10 @@
+{
+  "id": "robotics",
+  "name": "Robotics",
+  "title": "Robotics Engineering",
+  "description": "Design robotic systems using sensing, control, and planning.",
+  "deps": ["fundamental-programming"],
+  "read": ["https://www.ros.org/"],
+  "watch": ["https://www.youtube.com/watch?v=4W6wHfL0J4Q"],
+  "exercices": ["https://robotbenchmark.net/"]
+}

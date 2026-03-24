@@ -1,0 +1,10 @@
+{
+  "id": "startups",
+  "name": "Startups",
+  "title": "Startup Learning Hub",
+  "description": "Going from zero to one",
+  "deps": [],
+  "read": ["https://www.amazon.com.au/Zero-One-Blake-Masters/dp/0753555204"],
+  "watch": ["https://www.youtube.com/@ycombinator/videos"],
+  "people": ["https://www.paulgraham.com/"]
+}

@@ -358,19 +358,19 @@ export default function ComponentPage() {
                 </Button>
               </div>
               <div className='flex flex-wrap gap-2'>
-                <Button isLoading variant='primary'>
+                <Button disabled variant='primary'>
                   Disabled
                 </Button>
-                <Button isLoading variant='outline' isDarkBg={mode === 'dark'}>
+                <Button disabled variant='outline' isDarkBg={mode === 'dark'}>
                   Disabled
                 </Button>
-                <Button isLoading variant='ghost' isDarkBg={mode === 'dark'}>
+                <Button disabled variant='ghost' isDarkBg={mode === 'dark'}>
                   Disabled
                 </Button>
-                <Button isLoading variant='dark'>
+                <Button disabled variant='dark'>
                   Disabled
                 </Button>
-                <Button isLoading variant='light'>
+                <Button disabled variant='light'>
                   Disabled
                 </Button>
               </div>

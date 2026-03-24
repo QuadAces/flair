@@ -1,0 +1,9 @@
+{
+  "id": "flight-basics",
+  "title": "Flight Basics",
+  "description": "Core principles of multirotor flight.",
+  "deps": [],
+  "read": ["https://www.dronepilotgroundschool.com/how-do-drones-fly/"],
+  "watch": ["https://www.youtube.com/watch?v=5hYfK9K4xYk"],
+  "exercices": ["https://docs.px4.io/main/en/simulation/"]
+}

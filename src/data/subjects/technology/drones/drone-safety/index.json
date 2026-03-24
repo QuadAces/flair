@@ -1,0 +1,11 @@
+{
+  "id": "drone-safety",
+  "title": "Drone Safety",
+  "description": "Airspace rules, risk management, and safe operation.",
+  "deps": ["flight-basics"],
+  "read": [
+    "https://www.faa.gov/uas/recreational_flyers/knowledge_test_updates"
+  ],
+  "watch": ["https://www.youtube.com/watch?v=0M5V3hA9M70"],
+  "exercices": ["https://uavcoach.com/drone-laws/"]
+}

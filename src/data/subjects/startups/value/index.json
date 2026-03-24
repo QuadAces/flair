@@ -1,0 +1,13 @@
+{
+  "id": "value",
+  "name": "Value Creation",
+  "title": "Value Creation in Startups",
+  "description": "Learn how to create value for customers and build successful startups.",
+  "deps": ["creativity"],
+  "read": [
+    "https://www.amazon.com.au/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898",
+    "https://www.amazon.com.au/Running-Lean-Iterate-Works-Entrepreneurs/dp/1449305172"
+  ],
+  "watch": ["https://www.youtube.com/watch?v=RSaIOCHbuYw"],
+  "people": ["https://www.ashmaurya.com/"]
+}

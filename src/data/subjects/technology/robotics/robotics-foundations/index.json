@@ -1,0 +1,9 @@
+{
+  "id": "robotics-foundations",
+  "title": "Robotics Foundations",
+  "description": "Coordinate frames, kinematics, and robot architecture.",
+  "deps": [],
+  "read": ["https://modernrobotics.northwestern.edu/"],
+  "watch": ["https://www.youtube.com/watch?v=Ip6D9LwWjvU"],
+  "exercices": ["https://petercorke.com/toolboxes/robotics-toolbox/"]
+}

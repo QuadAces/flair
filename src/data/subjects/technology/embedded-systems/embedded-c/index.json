@@ -1,0 +1,9 @@
+{
+  "id": "embedded-c",
+  "title": "Embedded C",
+  "description": "Memory-safe patterns, peripherals, and low-level C programming.",
+  "deps": ["microcontroller-basics"],
+  "read": ["https://www.embedded.com/embedded-c-programming/"],
+  "watch": ["https://www.youtube.com/watch?v=KJgsSFOSQv0"],
+  "exercices": ["https://www.hackerrank.com/domains/c"]
+}
